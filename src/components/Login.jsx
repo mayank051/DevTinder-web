@@ -1,20 +1,29 @@
 import { useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addUser } from "../store/userSlice";
+import { BASE_URL } from "../utils/constants";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     try {
-      const res = axios.post(
-        "http://localhost:3000/login",
+      const res = await axios.post(
+        BASE_URL + "/login",
         {
           emailId: emailId,
           password: password,
         },
+        // will allow the browser to send the cookies along with subsequent requests to the same domain or across domains
         { withCredentials: true }
       );
+      dispatch(addUser(res.data));
+      navigate("/feed");
     } catch (err) {
       console.log(err);
     }

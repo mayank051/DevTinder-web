@@ -1,4 +1,9 @@
-const UserCard = ({ user, connectionPage }) => {
+const UserCard = ({
+  user,
+  connectionPage = false,
+  requestPage = false,
+  feedPage = false,
+}) => {
   const { firstName, lastName, photoUrl, about, skills } = user;
   return (
     <div className=" card bg-base-300 w-96 shadow-xl">
@@ -15,15 +20,23 @@ const UserCard = ({ user, connectionPage }) => {
           {firstName} {lastName}
         </h2>
         <p>{about}</p>
-        {connectionPage && (
-          <button className="btn btn-secondary">{"Message"}</button>
-        )}
-        {!connectionPage && (
-          <div className="flex card-actions justify-end">
-            <button className="btn btn-primary">{"Ignore"}</button>
-            <button className="btn btn-secondary">{"Interested"}</button>
-          </div>
-        )}
+        <div>
+          {connectionPage && (
+            <button className="btn btn-secondary">{"Message"}</button>
+          )}
+          {requestPage && (
+            <div className="flex card-actions justify-end">
+              <button className="btn btn-primary">{"Reject"}</button>
+              <button className="btn btn-secondary">{"Accept"}</button>
+            </div>
+          )}
+          {feedPage && (
+            <div className="flex card-actions justify-end">
+              <button className="btn btn-primary">{"Ignore"}</button>
+              <button className="btn btn-secondary">{"Interested"}</button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

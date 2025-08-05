@@ -28,7 +28,7 @@ const FeedPage = () => {
     feedState && (
       <div className="flex gap-20">
         {feedState.value.map((user) => {
-          return <UserCard user={user} key={user._id} />;
+          return <UserCard user={user} key={user._id} feedPage={true} />;
         })}
       </div>
     )

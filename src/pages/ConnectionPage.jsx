@@ -25,7 +25,7 @@ const ConnectionPage = () => {
 
   if (!connections || !connections.length)
     return <div>No Connections Found!!</div>;
-  console.log("Mayank", connections);
+
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}

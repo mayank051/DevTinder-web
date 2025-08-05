@@ -1,8 +1,12 @@
+const ACCEPTED = "accepted";
+const REJECTED = "rejected";
 const UserCard = ({
   user,
   connectionPage = false,
   requestPage = false,
   feedPage = false,
+  handleAction = () => {},
+  _id = "",
 }) => {
   const { firstName, lastName, photoUrl, about, skills } = user;
   return (
@@ -26,8 +30,18 @@ const UserCard = ({
           )}
           {requestPage && (
             <div className="flex card-actions justify-end">
-              <button className="btn btn-primary">{"Reject"}</button>
-              <button className="btn btn-secondary">{"Accept"}</button>
+              <button
+                className="btn btn-primary"
+                onClick={() => handleAction(_id, REJECTED)}
+              >
+                {"Reject"}
+              </button>
+              <button
+                className="btn btn-secondary"
+                onClick={() => handleAction(_id, ACCEPTED)}
+              >
+                {"Accept"}
+              </button>
             </div>
           )}
           {feedPage && (

@@ -22,6 +22,11 @@ const Body = () => {
     }
   };
   useEffect(() => {
+    if (
+      window.location.pathname === "/login" ||
+      window.location.pathname === "/signup"
+    )
+      return;
     fetchUser();
   }, []);
 

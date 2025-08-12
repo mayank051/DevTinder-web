@@ -66,6 +66,12 @@ const Login = () => {
             </button>
           </div>
         </div>
+        <p
+          className="mx-auto m-2 cursor-pointer"
+          onClick={() => navigate("/signup")}
+        >
+          New User? Signup
+        </p>
       </div>
     </div>
   );

@@ -46,19 +46,17 @@ const RequestsPage = () => {
     }
   };
 
-  const handleReject = (id) => {};
-
   if (!requests || !requests.length) return <div>No Requests Found</div>;
 
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <h1 className="font-bold">Connections</h1>
+      <h1 className="font-bold">Connection Requests</h1>
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="flex justify-center gap-20 my-5">
+        <div className="flex justify-center gap-20 my-5 flex-wrap">
           {requests.map((user) => {
             return (
               <UserCard

@@ -1,7 +1,7 @@
-const ToastComponent = ({ message }) => {
+const ToastComponent = ({ message, type }) => {
   return (
     <div className="toast toast-top toast-center">
-      <div className="alert alert-success">
+      <div className={`alert ${type}`}>
         <span>{message}</span>
       </div>
     </div>

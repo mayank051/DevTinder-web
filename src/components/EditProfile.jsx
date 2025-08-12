@@ -43,7 +43,9 @@ const EditProfile = ({ user }) => {
   };
   return (
     <>
-      {successMsg && <ToastComponent message={successMsg} />}
+      {successMsg && (
+        <ToastComponent message={successMsg} type="alert-success" />
+      )}
       <div className="flex gap-10 justify-center m-5">
         <div className="flex justify-center my-20 card">
           <div className="card bg-base-300 w-96 shadow-xl">

@@ -31,7 +31,7 @@ const ConnectionPage = () => {
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <h1 className="font-bold">Connections</h1>
-      <div className="flex justify-center gap-20 my-5">
+      <div className="flex justify-center gap-20 my-5 flex-wrap">
         {connections.map((user) => {
           return <UserCard user={user} key={user._id} connectionPage={true} />;
         })}

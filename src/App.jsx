@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Body from "./Body";
 import Login from "./components/Login";
+import Signup from "./components/SignUp";
 import FeedPage from "./pages/FeedPage";
 import ProfilePage from "./pages/ProfilePage";
 import ConnectionPage from "./pages/ConnectionPage";
@@ -15,6 +16,7 @@ function App() {
             <Route index element={<FeedPage />} />
             <Route path="feed" element={<FeedPage />} />
             <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
             <Route path="profile" element={<ProfilePage />} />
             <Route path="connections" element={<ConnectionPage />} />
             <Route path="requests" element={<RequestsPage />} />

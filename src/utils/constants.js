@@ -1,4 +1,3 @@
-// export const BASE_URL = "http://localhost:3000";
-
-//For deployment relative url
-export const BASE_URL = "/api";
+//For production provide relative url
+export const BASE_URL =
+  location.hostname === "localhost" ? "http://localhost:3000" : "/api";
